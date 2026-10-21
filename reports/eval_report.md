@@ -1,7 +1,7 @@
 # Cash application eval report
 
 Extractor: **offline**  
-Run: 2026-10-21 01:47 UTC
+Run: 2026-10-21 02:01 UTC
 
 | Metric | Development set (used while building) | Held-out set | Stress set (hand-written) |
 | --- | --- | --- | --- |
