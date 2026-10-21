@@ -1,0 +1,58 @@
+name: Test, evaluate and build
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: cashapp
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd pg_isready --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      DATABASE_URL: postgres://postgres:postgres@localhost:5432/cashapp
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+
+      - name: Install
+        run: npm ci
+
+      - name: Type check (Node.js and React)
+        run: npm run typecheck
+
+      - name: Tests (unit, eval gate, PostgreSQL integration, API)
+        run: npm test
+
+      - name: Evals (offline extractor)
+        run: npm run evals
+
+      - name: Evals with Claude (only if an API key secret is set)
+        if: env.ANTHROPIC_API_KEY != ''
+        run: npm run evals:llm
+
+      - name: Build the React dashboard
+        run: npm run build:web
+
+      - name: Save reports and dashboard
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add reports docs
+          git diff --cached --quiet || git commit -m "Update eval reports and dashboard"
+          git push
