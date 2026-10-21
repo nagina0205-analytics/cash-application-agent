@@ -1,0 +1,223 @@
+{
+ "mode": "offline",
+ "dev": {
+  "payments": 160,
+  "autoApplied": 129,
+  "wrongAutoApplications": 0,
+  "autoApplyPrecision": 1,
+  "straightThroughRate": 0.80625,
+  "shouldReview": 31,
+  "correctEscalations": 31,
+  "missedAutomation": 0,
+  "byScenario": {
+   "early_pay_discount": {
+    "total": 23,
+    "correct": 23
+   },
+   "discount_after_deadline": {
+    "total": 6,
+    "correct": 6
+   },
+   "single_invoice": {
+    "total": 28,
+    "correct": 28
+   },
+   "no_reference_unique_amount": {
+    "total": 13,
+    "correct": 13
+   },
+   "short_pay": {
+    "total": 9,
+    "correct": 9
+   },
+   "ambiguous_same_amount": {
+    "total": 7,
+    "correct": 7
+   },
+   "payer_name_variant": {
+    "total": 19,
+    "correct": 19
+   },
+   "multi_invoice": {
+    "total": 17,
+    "correct": 17
+   },
+   "no_reference_two_invoices": {
+    "total": 6,
+    "correct": 6
+   },
+   "unknown_payer": {
+    "total": 6,
+    "correct": 6
+   },
+   "typo_in_invoice_number": {
+    "total": 10,
+    "correct": 10
+   },
+   "po_reference": {
+    "total": 13,
+    "correct": 13
+   },
+   "overpayment": {
+    "total": 3,
+    "correct": 3
+   }
+  }
+ },
+ "holdout": {
+  "payments": 90,
+  "autoApplied": 71,
+  "wrongAutoApplications": 0,
+  "autoApplyPrecision": 1,
+  "straightThroughRate": 0.7888888888888889,
+  "shouldReview": 19,
+  "correctEscalations": 19,
+  "missedAutomation": 0,
+  "byScenario": {
+   "early_pay_discount": {
+    "total": 11,
+    "correct": 11
+   },
+   "discount_after_deadline": {
+    "total": 6,
+    "correct": 6
+   },
+   "overpayment": {
+    "total": 4,
+    "correct": 4
+   },
+   "single_invoice": {
+    "total": 17,
+    "correct": 17
+   },
+   "multi_invoice": {
+    "total": 11,
+    "correct": 11
+   },
+   "ambiguous_same_amount": {
+    "total": 3,
+    "correct": 3
+   },
+   "short_pay": {
+    "total": 4,
+    "correct": 4
+   },
+   "payer_name_variant": {
+    "total": 13,
+    "correct": 13
+   },
+   "typo_in_invoice_number": {
+    "total": 9,
+    "correct": 9
+   },
+   "no_reference_two_invoices": {
+    "total": 4,
+    "correct": 4
+   },
+   "no_reference_unique_amount": {
+    "total": 4,
+    "correct": 4
+   },
+   "po_reference": {
+    "total": 2,
+    "correct": 2
+   },
+   "unknown_payer": {
+    "total": 2,
+    "correct": 2
+   }
+  }
+ },
+ "stress": {
+  "payments": 20,
+  "autoApplied": 10,
+  "wrongAutoApplications": 0,
+  "autoApplyPrecision": 1,
+  "straightThroughRate": 0.5,
+  "shouldReview": 5,
+  "correctEscalations": 5,
+  "missedAutomation": 5,
+  "byScenario": {
+   "check number next to invoice": {
+    "total": 1,
+    "correct": 0
+   },
+   "invoice with dash prefix": {
+    "total": 1,
+    "correct": 1
+   },
+   "misspelled payer, good reference": {
+    "total": 1,
+    "correct": 1
+   },
+   "payer pays another customer's invoice": {
+    "total": 1,
+    "correct": 1
+   },
+   "installment payment": {
+    "total": 1,
+    "correct": 1
+   },
+   "dollar amount written in remittance": {
+    "total": 1,
+    "correct": 1
+   },
+   "leading zeros on invoice number": {
+    "total": 1,
+    "correct": 0
+   },
+   "discount on only one of two invoices": {
+    "total": 1,
+    "correct": 0
+   },
+   "per-invoice amounts listed": {
+    "total": 1,
+    "correct": 1
+   },
+   "customer quoted the wrong invoice": {
+    "total": 1,
+    "correct": 1
+   },
+   "three invoices, no reference": {
+    "total": 1,
+    "correct": 0
+   },
+   "card fee deducted": {
+    "total": 1,
+    "correct": 1
+   },
+   "duplicate payment for a paid invoice": {
+    "total": 1,
+    "correct": 1
+   },
+   "construction pay application language": {
+    "total": 1,
+    "correct": 1
+   },
+   "one PO split across two invoices": {
+    "total": 1,
+    "correct": 1
+   },
+   "joint check from a bank": {
+    "total": 1,
+    "correct": 1
+   },
+   "year in remittance": {
+    "total": 1,
+    "correct": 1
+   },
+   "ZIP code in remittance": {
+    "total": 1,
+    "correct": 0
+   },
+   "discount rounded on the total": {
+    "total": 1,
+    "correct": 1
+   },
+   "phone number in remittance": {
+    "total": 1,
+    "correct": 1
+   }
+  }
+ }
+}

@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "target": "ES2022", "module": "ESNext", "moduleResolution": "Bundler", "strict": true,
+    "jsx": "react-jsx", "resolveJsonModule": true, "skipLibCheck": true, "noEmit": true,
+    "lib": ["ES2022", "DOM"], "types": ["vite/client"]
+  },
+  "include": ["src", "../src/types.ts", "../src/match.ts", "../src/extract.ts", "../src/store.ts", "../src/data"]
+}

@@ -1,0 +1,35 @@
+{
+  "name": "cash-application-agent",
+  "version": "1.0.0",
+  "description": "AI agent that applies customer payments to open invoices for construction suppliers, with evals and a human review queue.",
+  "type": "module",
+  "license": "MIT",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.137.0",
+    "express": "^5.3.0",
+    "pg": "^8.23.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.5",
+    "@types/pg": "^8.23.1",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.4",
+    "vitest": "^5.0.5"
+  },
+  "scripts": {
+    "start": "tsx src/server.ts",
+    "evals": "tsx src/evals.ts",
+    "evals:llm": "tsx src/evals.ts --llm",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p web/tsconfig.json",
+    "build:web": "vite build web",
+    "dev:web": "vite web"
+  }
+}
